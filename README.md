@@ -49,6 +49,7 @@ $ yarn install
 $ cd reactnd-project-flashcards
 $ yarn start
 ```
+Tested on real iPhone 7+ device and on the xcode Version 9.4.1 simulator and Genymotion emulator.
 
 ## License
 

@@ -43,15 +43,15 @@ function setDailyNotification({ startingFromDayOffeset = 0, overwriteExisting = 
 
       Notifications.cancelAllScheduledNotificationsAsync();
 
-      const startDate = new Date();
-      startDate.setDate(startDate.getDate() + startingFromDayOffeset);
-      startDate.setHours(20);
-      startDate.setMinutes(0);
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrow.setHours(20);
+      tomorrow.setMinutes(0);
 
       Notifications
-        .scheduleLocalNotificationAsync(createNotification(), { time: startDate, repeat: 'day' });
+        .scheduleLocalNotificationAsync(createNotification(), { time: tomorrow, repeat: 'day' });
 
-      console.log('[Notification] Creating daily notifications, starting from:', startDate);
+      console.log('[Notification] Creating daily notifications, starting from:', tomorrow);
       AsyncStorage.setItem(NOTIFICATION_KEY, JSON.stringify(true));
     });
   });
